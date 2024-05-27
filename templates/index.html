@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Injection Scanner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        button[type="submit"] {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .vulnerability {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #fff;
+        }
+        .vulnerable {
+            background-color: #dc3545; /* Red */
+        }
+        .not-vulnerable {
+            background-color: #28a745; /* Green */
+        }
+    </style>
+</head>
+<body>
+    <h1>SQL Injection Scanner</h1>
+    <form method="post" action="/">
+        <label for="url">Enter URL to scan:</label><br>
+        <input type="text" id="url" name="url" required><br>
+        <button type="submit">Scan</button>
+    </form>
+
+    {% if vulnerability_status %}
+    <div class="vulnerability {% if is_vulnerable %}vulnerable{% else %}not-vulnerable{% endif %}">
+        {{ vulnerability_status }}
+    </div>
+    {% endif %}
+</body>
+</html>
