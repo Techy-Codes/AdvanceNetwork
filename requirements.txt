@@ -3,4 +3,3 @@ gunicorn
 beautifulsoup4
 requests
 env
-urllib.parse
