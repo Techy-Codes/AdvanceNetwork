@@ -67,5 +67,5 @@ def sql_injection_scan(url):
                 break
 
 if __name__=="__main__":
-    urlToBeChecked="http://localhost/Projexts/inj/"
+    urlToBeChecked="https://vulnerabletest.onrender.com/"
     sql_injection_scan(urlToBeChecked)
